@@ -1,10 +1,11 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Router, Route } from 'react-router'
 import { Layout } from './Layout';
 import { IndexPage } from './IndexPage';
 import { AthletePage } from './AthletePage';
 import { NotFoundPage } from './NotFoundPage';
 import athletes from '../data/athletes';
+// import Routes from '../routes';
 
 const renderIndex = () => <IndexPage athletes={athletes} />;
 const renderAthlete = ({ match, staticContext }) => {
@@ -19,11 +20,9 @@ const renderAthlete = ({ match, staticContext }) => {
 
 export const App = () => (
   <Layout>
-    <Switch>
-      <Route exact path="/" render={renderIndex} />
-      <Route exact path="/athlete/:id" render={renderAthlete} />
-      <Route component={NotFoundPage} />
-    </Switch>
+      <Router render={(props) => <AsyncProps {...props}/>}>
+   <Route path="*" component={NotFoundPage}/>
+ </Router>
   </Layout>
 );
 

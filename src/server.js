@@ -5,11 +5,17 @@ import { Server } from 'http';
 import Express from 'express';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import { StaticRouter as Router } from 'react-router-dom';
 import { App } from './components/App';
+import Routes from './routes';
+
+import { match, RoutingContext } from 'react-router'
+import AsyncProps, { loadPropsOnServer } from 'async-props'
 
 const app = new Express();
 const server = new Server(app);
+
+import { routesConfig } from './routesConfig';
+
 
 // use ejs templates
 app.set('view engine', 'ejs');
@@ -18,30 +24,52 @@ app.set('views', path.join(__dirname, 'views'));
 // define the folder that will be used for static assets
 app.use(Express.static(path.join(__dirname, 'static')));
 
+app.get('/player', (req, res) => {
+
+  return res.json({ test: 'this is the test string'});
+});
 // universal routing and rendering
+// app.get('*', (req, res) => {
+//   let markup = '';
+//   let status = 200;
+//
+//   if (process.env.UNIVERSAL) {
+//     const context = {};
+//     markup = renderToString(
+//       <Router location={req.url} context={context}>
+//         <App />
+//       </Router>,
+//     );
+//
+//     // context.url will contain the URL to redirect to if a <Redirect> was used
+//     if (context.url) {
+//       return res.redirect(302, context.url);
+//     }
+//
+//     if (context.is404) {
+//       status = 404;
+//     }
+//   }
+//
+//   return res.status(status).render('index', { markup });
+// });
 app.get('*', (req, res) => {
-  let markup = '';
-  let status = 200;
+  match({ routes: routesConfig, location: req.url }, (err, redirect, renderProps) => {
 
-  if (process.env.UNIVERSAL) {
-    const context = {};
-    markup = renderToString(
-      <Router location={req.url} context={context}>
-        <App />
-      </Router>,
-    );
+      // 1. load the props
+      loadPropsOnServer(renderProps, null, (err, asyncProps, scriptTag) => {
 
-    // context.url will contain the URL to redirect to if a <Redirect> was used
-    if (context.url) {
-      return res.redirect(302, context.url);
-    }
+        // 2. use `AsyncProps` instead of `RoutingContext` and pass it
+        //    `renderProps` and `asyncProps`
+        const appHTML = renderToString(
+          <AsyncProps {...renderProps} {...asyncProps} />
+        )
 
-    if (context.is404) {
-      status = 404;
-    }
-  }
+        // 3. render the script tag into the server markup
+        res.send(appHTML)
+      })
+    })
 
-  return res.status(status).render('index', { markup });
 });
 
 // start the server

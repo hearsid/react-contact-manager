@@ -6,8 +6,10 @@ import { Flag } from './Flag';
 
 export const AthletePage = ({ athlete, athletes }) => {
   const headerStyle = { backgroundImage: `url(/img/${athlete.cover})` };
+  var something = "something";
   return (
-    <div className="athlete-full">
+
+    <div className="athlete-full"><span>something</span>
       <AthletesMenu athletes={athletes} />
       <div className="athlete">
         <header style={headerStyle} />
