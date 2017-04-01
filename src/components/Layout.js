@@ -1,4 +1,5 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
+import { Header } from './Header';
 
 export class Layout extends Component {
 
@@ -6,7 +7,8 @@ export class Layout extends Component {
   render() {
     return (
       <div class="layout">
-        {props.children}
+        <Header></Header>
+        {this.props.children}
       </div>
     )
   }

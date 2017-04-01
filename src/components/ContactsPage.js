@@ -1,10 +1,39 @@
-<h2 class="page-header text-center">List of contacts</h2>
-<p class="text-center">
-    <a ui-sref="add" class="btn btn-lg btn-outline" >Add Contact</a>
-</p>
-<ul class="media-list row contacts-container">
-    <li ng-repeat="contact in vm.contacts" class="my-repeat-animation contacts media col-md-6 col-lg-4">
-        {{$index+1}}
-        <span ng-include="'app/templates/contact.tpl.html'"></span>
-    </li>
-</ul>
+import React, {Component} from 'react';
+import { Contact } from './Contact';
+import { Link } from 'react-router';
+import  axios from 'axios';
+
+export class ContactsPage extends Component {
+
+  static loadProps(context, cb) {
+        axios.get('http://localhost:3000/getContacts')
+       .then(function (response) {
+        cb(null, {contacts: response.data});
+
+      })
+      .catch(function (error) {
+        console.log(error);
+        cb(null, {name: "error"});
+      });
+  }
+
+  render() {
+     var contacts = this.props.contacts;
+      return(
+        <div className="contacts-page">
+    <h2 className="page-header text-center">List of contacts</h2>
+    <p className="text-center">
+        <Link to='/add' activeclassName="active"
+              className="btn btn-lg btn-outline" >Add Contact</Link>
+    </p>
+    <ul className="media-list row contacts-container">
+      { contacts.map( (contact, index) => {
+        <Contact key={index} {...contact}
+                className="my-repeat-animation contacts media col-md-6 col-lg-4"></Contact>
+      })
+      }
+    </ul>
+  </div>
+    )
+}
+}

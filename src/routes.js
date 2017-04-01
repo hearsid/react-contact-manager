@@ -6,8 +6,12 @@ import { routesConfig } from './routesConfig';
 export default class Routes extends React.Component {
 
   render() {
-    return (<Router history={browserHistory}
+    return (
+      <Layout>
+      <Router history={browserHistory}
                    routes={routesConfig}
-                  render={ (props) => { <AsyncProps {...props} /> } } /> )
+                  render={ (props) => { <AsyncProps {...props} /> } } />
+                </Layout>
+            )
   }
 }

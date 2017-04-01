@@ -10,23 +10,29 @@ import Routes from './routes';
 
 import { match, RoutingContext } from 'react-router'
 import AsyncProps, { loadPropsOnServer } from 'async-props'
+import  contacts  from './data/contacts';
 
 const app = new Express();
 const server = new Server(app);
 
 import { routesConfig } from './routesConfig';
+import { Layout } from './components/Layout';
 
-
-// use ejs templates
-app.set('view engine', 'ejs');
+// use ejs templating engine
+app.engine('html', require('ejs').renderFile);
 app.set('views', path.join(__dirname, 'views'));
 
 // define the folder that will be used for static assets
 app.use(Express.static(path.join(__dirname, 'static')));
+console.log(contacts);
+app.get('/getContacts', (req, res) => {
+  return res.json(contacts);
+
+});
 
 app.get('/player', (req, res) => {
-
   return res.json({ test: {first:'this is the test string'} });
+
 });
 // universal routing and rendering
 // app.get('*', (req, res) => {
@@ -62,11 +68,15 @@ app.get('*', (req, res) => {
         // 2. use `AsyncProps` instead of `RoutingContext` and pass it
         //    `renderProps` and `asyncProps`
         const appHTML = renderToString(
+          <Layout>
           <AsyncProps {...renderProps} {...asyncProps} />
+          </Layout>
         )
 
         // 3. render the script tag into the server markup
-        res.send(appHTML)
+        // res.send(appHTML)
+          return res.render('index.html', { markup: appHTML });
+
       })
     })
 
