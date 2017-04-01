@@ -1263,7 +1263,7 @@ eval("/**\n * Copyright 2013-present, Facebook, Inc.\n * All rights reserved.\n 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.App = undefined;\n\nvar _react = __webpack_require__(/*! react */ 4);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouter = __webpack_require__(/*! react-router */ 11);\n\nvar _Layout = __webpack_require__(/*! ./Layout */ 124);\n\nvar _IndexPage = __webpack_require__(/*! ./IndexPage */ 123);\n\nvar _AthletePage = __webpack_require__(/*! ./AthletePage */ 119);\n\nvar _NotFoundPage = __webpack_require__(/*! ./NotFoundPage */ 126);\n\nvar _athletes = __webpack_require__(/*! ../data/athletes */ 127);\n\nvar _athletes2 = _interopRequireDefault(_athletes);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// import Routes from '../routes';\n\nvar renderIndex = function renderIndex() {\n  return _react2.default.createElement(_IndexPage.IndexPage, { athletes: _athletes2.default });\n};\nvar renderAthlete = function renderAthlete(_ref) {\n  var match = _ref.match,\n      staticContext = _ref.staticContext;\n\n  var id = match.params.id;\n  var athlete = _athletes2.default.find(function (current) {\n    return current.id === id;\n  });\n  if (!athlete) {\n    return _react2.default.createElement(_NotFoundPage.NotFoundPage, { staticContext: staticContext });\n  }\n\n  return _react2.default.createElement(_AthletePage.AthletePage, { athlete: athlete, athletes: _athletes2.default });\n};\n\nvar App = exports.App = function App() {\n  return _react2.default.createElement(\n    _Layout.Layout,\n    null,\n    _react2.default.createElement(\n      _reactRouter.Router,\n      { render: function render(props) {\n          return _react2.default.createElement(AsyncProps, props);\n        } },\n      _react2.default.createElement(_reactRouter.Route, { path: '*', component: _NotFoundPage.NotFoundPage })\n    )\n  );\n};\n\nexports.default = App;//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiOTkuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vc3JjL2NvbXBvbmVudHMvQXBwLmpzPzU3YWEiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCB7IFJvdXRlciwgUm91dGUgfSBmcm9tICdyZWFjdC1yb3V0ZXInXG5pbXBvcnQgeyBMYXlvdXQgfSBmcm9tICcuL0xheW91dCc7XG5pbXBvcnQgeyBJbmRleFBhZ2UgfSBmcm9tICcuL0luZGV4UGFnZSc7XG5pbXBvcnQgeyBBdGhsZXRlUGFnZSB9IGZyb20gJy4vQXRobGV0ZVBhZ2UnO1xuaW1wb3J0IHsgTm90Rm91bmRQYWdlIH0gZnJvbSAnLi9Ob3RGb3VuZFBhZ2UnO1xuaW1wb3J0IGF0aGxldGVzIGZyb20gJy4uL2RhdGEvYXRobGV0ZXMnO1xuLy8gaW1wb3J0IFJvdXRlcyBmcm9tICcuLi9yb3V0ZXMnO1xuXG5jb25zdCByZW5kZXJJbmRleCA9ICgpID0+IDxJbmRleFBhZ2UgYXRobGV0ZXM9e2F0aGxldGVzfSAvPjtcbmNvbnN0IHJlbmRlckF0aGxldGUgPSAoeyBtYXRjaCwgc3RhdGljQ29udGV4dCB9KSA9PiB7XG4gIGNvbnN0IGlkID0gbWF0Y2gucGFyYW1zLmlkO1xuICBjb25zdCBhdGhsZXRlID0gYXRobGV0ZXMuZmluZChjdXJyZW50ID0+IGN1cnJlbnQuaWQgPT09IGlkKTtcbiAgaWYgKCFhdGhsZXRlKSB7XG4gICAgcmV0dXJuIDxOb3RGb3VuZFBhZ2Ugc3RhdGljQ29udGV4dD17c3RhdGljQ29udGV4dH0gLz47XG4gIH1cblxuICByZXR1cm4gPEF0aGxldGVQYWdlIGF0aGxldGU9e2F0aGxldGV9IGF0aGxldGVzPXthdGhsZXRlc30gLz47XG59O1xuXG5leHBvcnQgY29uc3QgQXBwID0gKCkgPT4gKFxuICA8TGF5b3V0PlxuICAgICAgPFJvdXRlciByZW5kZXI9eyhwcm9wcykgPT4gPEFzeW5jUHJvcHMgey4uLnByb3BzfS8+fT5cbiAgIDxSb3V0ZSBwYXRoPVwiKlwiIGNvbXBvbmVudD17Tm90Rm91bmRQYWdlfS8+XG4gPC9Sb3V0ZXI+XG4gIDwvTGF5b3V0PlxuKTtcblxuZXhwb3J0IGRlZmF1bHQgQXBwO1xuXG5cblxuLy8gV0VCUEFDSyBGT09URVIgLy9cbi8vIHNyYy9jb21wb25lbnRzL0FwcC5qcyJdLCJtYXBwaW5ncyI6Ijs7Ozs7OztBQUFBO0FBQ0E7OztBQUFBO0FBQ0E7QUFBQTtBQUNBO0FBQUE7QUFDQTtBQUFBO0FBQ0E7QUFBQTtBQUNBO0FBQUE7QUFDQTs7Ozs7QUFBQTtBQUNBO0FBQ0E7QUFBQTtBQUFBO0FBQ0E7QUFBQTtBQUFBO0FBQ0E7QUFBQTtBQUNBO0FBQUE7QUFBQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFBQTtBQUNBO0FBQUE7QUFDQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQ0E7QUFEQTtBQURBO0FBREE7QUFDQTtBQU9BIiwic291cmNlUm9vdCI6IiJ9");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.App = undefined;\n\nvar _react = __webpack_require__(/*! react */ 4);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouter = __webpack_require__(/*! react-router */ 11);\n\nvar _Layout = __webpack_require__(/*! ./Layout */ 124);\n\nvar _NotFoundPage = __webpack_require__(/*! ./NotFoundPage */ 126);\n\nvar _contacts = __webpack_require__(/*! ../data/contacts */ 261);\n\nvar _contacts2 = _interopRequireDefault(_contacts);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// import Routes from '../routes';\n\n\nvar App = exports.App = function App() {\n  return _react2.default.createElement(\n    _Layout.Layout,\n    null,\n    _react2.default.createElement(\n      _reactRouter.Router,\n      { render: function render(props) {\n          return _react2.default.createElement(AsyncProps, props);\n        } },\n      _react2.default.createElement(_reactRouter.Route, { path: '*', component: _NotFoundPage.NotFoundPage })\n    )\n  );\n};\n\nexports.default = App;//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiOTkuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vc3JjL2NvbXBvbmVudHMvQXBwLmpzPzU3YWEiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCB7IFJvdXRlciwgUm91dGUgfSBmcm9tICdyZWFjdC1yb3V0ZXInXG5pbXBvcnQgeyBMYXlvdXQgfSBmcm9tICcuL0xheW91dCc7XG5pbXBvcnQgeyBOb3RGb3VuZFBhZ2UgfSBmcm9tICcuL05vdEZvdW5kUGFnZSc7XG5pbXBvcnQgIENvbnRhY3RzICBmcm9tICcuLi9kYXRhL2NvbnRhY3RzJztcbi8vIGltcG9ydCBSb3V0ZXMgZnJvbSAnLi4vcm91dGVzJztcblxuXG5leHBvcnQgY29uc3QgQXBwID0gKCkgPT4gKFxuICA8TGF5b3V0PlxuICAgICAgPFJvdXRlciByZW5kZXI9eyhwcm9wcykgPT4gPEFzeW5jUHJvcHMgey4uLnByb3BzfS8+fT5cbiAgICAgICAgPFJvdXRlIHBhdGg9XCIqXCIgY29tcG9uZW50PXtOb3RGb3VuZFBhZ2V9Lz5cbiAgICAgIDwvUm91dGVyPlxuICA8L0xheW91dD5cbik7XG5cbmV4cG9ydCBkZWZhdWx0IEFwcDtcblxuXG5cbi8vIFdFQlBBQ0sgRk9PVEVSIC8vXG4vLyBzcmMvY29tcG9uZW50cy9BcHAuanMiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7QUFBQTtBQUNBOzs7QUFBQTtBQUNBO0FBQUE7QUFDQTtBQUFBO0FBQ0E7QUFBQTtBQUNBOzs7OztBQUFBO0FBQ0E7QUFDQTtBQUNBO0FBQUE7QUFDQTtBQUFBO0FBQ0E7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUNBO0FBREE7QUFEQTtBQURBO0FBQ0E7QUFPQSIsInNvdXJjZVJvb3QiOiIifQ==");
 
 /***/ }),
 /* 100 */
@@ -1493,31 +1493,11 @@ eval("\n\nvar utils = __webpack_require__(/*! ./../utils */ 9);\n\n/**\n * Parse
 eval("\n\n/**\n * Syntactic sugar for invoking a function and expanding an array for arguments.\n *\n * Common use case would be to use `Function.prototype.apply`.\n *\n *  ```js\n *  function f(x, y, z) {}\n *  var args = [1, 2, 3];\n *  f.apply(null, args);\n *  ```\n *\n * With `spread` this example can be re-written.\n *\n *  ```js\n *  spread(function(x, y, z) {})([1, 2, 3]);\n *  ```\n *\n * @param {Function} callback\n * @returns {Function}\n */\nmodule.exports = function spread(callback) {\n  return function wrap(arr) {\n    return callback.apply(null, arr);\n  };\n};\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMTE4LmpzIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vLy4vfi9heGlvcy9saWIvaGVscGVycy9zcHJlYWQuanM/M2M0MSJdLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XG5cbi8qKlxuICogU3ludGFjdGljIHN1Z2FyIGZvciBpbnZva2luZyBhIGZ1bmN0aW9uIGFuZCBleHBhbmRpbmcgYW4gYXJyYXkgZm9yIGFyZ3VtZW50cy5cbiAqXG4gKiBDb21tb24gdXNlIGNhc2Ugd291bGQgYmUgdG8gdXNlIGBGdW5jdGlvbi5wcm90b3R5cGUuYXBwbHlgLlxuICpcbiAqICBgYGBqc1xuICogIGZ1bmN0aW9uIGYoeCwgeSwgeikge31cbiAqICB2YXIgYXJncyA9IFsxLCAyLCAzXTtcbiAqICBmLmFwcGx5KG51bGwsIGFyZ3MpO1xuICogIGBgYFxuICpcbiAqIFdpdGggYHNwcmVhZGAgdGhpcyBleGFtcGxlIGNhbiBiZSByZS13cml0dGVuLlxuICpcbiAqICBgYGBqc1xuICogIHNwcmVhZChmdW5jdGlvbih4LCB5LCB6KSB7fSkoWzEsIDIsIDNdKTtcbiAqICBgYGBcbiAqXG4gKiBAcGFyYW0ge0Z1bmN0aW9ufSBjYWxsYmFja1xuICogQHJldHVybnMge0Z1bmN0aW9ufVxuICovXG5tb2R1bGUuZXhwb3J0cyA9IGZ1bmN0aW9uIHNwcmVhZChjYWxsYmFjaykge1xuICByZXR1cm4gZnVuY3Rpb24gd3JhcChhcnIpIHtcbiAgICByZXR1cm4gY2FsbGJhY2suYXBwbHkobnVsbCwgYXJyKTtcbiAgfTtcbn07XG5cblxuXG4vLy8vLy8vLy8vLy8vLy8vLy9cbi8vIFdFQlBBQ0sgRk9PVEVSXG4vLyAuL34vYXhpb3MvbGliL2hlbHBlcnMvc3ByZWFkLmpzXG4vLyBtb2R1bGUgaWQgPSAxMThcbi8vIG1vZHVsZSBjaHVua3MgPSAwIl0sIm1hcHBpbmdzIjoiQUFBQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7Iiwic291cmNlUm9vdCI6IiJ9");
 
 /***/ }),
-/* 119 */
-/* unknown exports provided */
-/* all exports used */
-/*!***************************************!*\
-  !*** ./src/components/AthletePage.js ***!
-  \***************************************/
-/***/ (function(module, exports) {
-
-eval("throw new Error(\"Module build failed: Error: ENOENT: no such file or directory, open '/Users/siddharthsharma/Documents/repos/react-contact-manager/src/components/AthletePage.js'\");//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMTE5LmpzIiwic291cmNlcyI6W10sIm1hcHBpbmdzIjoiIiwic291cmNlUm9vdCI6IiJ9");
-
-/***/ }),
+/* 119 */,
 /* 120 */,
 /* 121 */,
 /* 122 */,
-/* 123 */
-/* unknown exports provided */
-/* all exports used */
-/*!*************************************!*\
-  !*** ./src/components/IndexPage.js ***!
-  \*************************************/
-/***/ (function(module, exports) {
-
-eval("throw new Error(\"Module build failed: Error: ENOENT: no such file or directory, open '/Users/siddharthsharma/Documents/repos/react-contact-manager/src/components/IndexPage.js'\");//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMTIzLmpzIiwic291cmNlcyI6W10sIm1hcHBpbmdzIjoiIiwic291cmNlUm9vdCI6IiJ9");
-
-/***/ }),
+/* 123 */,
 /* 124 */
 /* unknown exports provided */
 /* all exports used */
@@ -1543,17 +1523,7 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.NotFoundPage = undefined;\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = __webpack_require__(/*! react */ 4);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _axios = __webpack_require__(/*! axios */ 101);\n\nvar _axios2 = _interopRequireDefault(_axios);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /* eslint react/forbid-prop-types: \"off\" */\n\nvar NotFoundPage = exports.NotFoundPage = function (_React$Component) {\n  _inherits(NotFoundPage, _React$Component);\n\n  function NotFoundPage() {\n    _classCallCheck(this, NotFoundPage);\n\n    return _possibleConstructorReturn(this, (NotFoundPage.__proto__ || Object.getPrototypeOf(NotFoundPage)).apply(this, arguments));\n  }\n\n  _createClass(NotFoundPage, [{\n    key: 'render',\n    value: function render() {\n      var name = this.props.name;\n      var apiResponse = this.apiResponse;\n      return _react2.default.createElement(\n        'div',\n        { className: 'not-found' },\n        _react2.default.createElement(\n          'h1',\n          null,\n          '404'\n        ),\n        _react2.default.createElement(\n          'h2',\n          null,\n          'Page not found!'\n        ),\n        ' ',\n        name,\n        _react2.default.createElement('p', null)\n      );\n    }\n  }], [{\n    key: 'loadProps',\n    value: function loadProps(context, cb) {\n      _axios2.default.get('http://localhost:3000/player').then(function (response) {\n        console.log(response.data.test);\n        cb(null, { name: response.data.test });\n      }).catch(function (error) {\n        console.log(error);\n        cb(null, { name: \"error\" });\n      });\n    }\n  }]);\n\n  return NotFoundPage;\n}(_react2.default.Component);//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMTI2LmpzIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vL3NyYy9jb21wb25lbnRzL05vdEZvdW5kUGFnZS5qcz80YjAyIl0sInNvdXJjZXNDb250ZW50IjpbIi8qIGVzbGludCByZWFjdC9mb3JiaWQtcHJvcC10eXBlczogXCJvZmZcIiAqL1xuXG5pbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xuaW1wb3J0ICBheGlvcyBmcm9tICdheGlvcyc7XG5cbmV4cG9ydCBjbGFzcyBOb3RGb3VuZFBhZ2UgZXh0ZW5kcyBSZWFjdC5Db21wb25lbnQge1xuXG5cbiAgc3RhdGljIGxvYWRQcm9wcyhjb250ZXh0LCBjYikge1xuICAgICAgICBheGlvcy5nZXQoJ2h0dHA6Ly9sb2NhbGhvc3Q6MzAwMC9wbGF5ZXInKVxuICAgICAgIC50aGVuKGZ1bmN0aW9uIChyZXNwb25zZSkge1xuICAgICAgICBjb25zb2xlLmxvZyhyZXNwb25zZS5kYXRhLnRlc3QpO1xuICAgICAgICBjYihudWxsLCB7bmFtZTogcmVzcG9uc2UuZGF0YS50ZXN0fSk7XG5cbiAgICAgIH0pXG4gICAgICAuY2F0Y2goZnVuY3Rpb24gKGVycm9yKSB7XG4gICAgICAgIGNvbnNvbGUubG9nKGVycm9yKTtcbiAgICAgICAgY2IobnVsbCwge25hbWU6IFwiZXJyb3JcIn0pO1xuICAgICAgfSk7XG4gIH1cblxuXG5cblxuICByZW5kZXIoKSB7XG4gICAgdmFyIG5hbWUgPSB0aGlzLnByb3BzLm5hbWVcbiAgICB2YXIgYXBpUmVzcG9uc2UgPSB0aGlzLmFwaVJlc3BvbnNlO1xuICAgIHJldHVybiAoPGRpdiBjbGFzc05hbWU9XCJub3QtZm91bmRcIj5cbiAgICAgIDxoMT40MDQ8L2gxPlxuICAgICAgPGgyPlBhZ2Ugbm90IGZvdW5kITwvaDI+IHtuYW1lfVxuICAgICAgPHA+XG5cbiAgICAgIDwvcD5cbiAgICA8L2Rpdj5cbiAgICApO1xuICB9XG59XG5cblxuXG4vLyBXRUJQQUNLIEZPT1RFUiAvL1xuLy8gc3JjL2NvbXBvbmVudHMvTm90Rm91bmRQYWdlLmpzIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7QUFFQTtBQUNBOzs7QUFBQTtBQUNBOzs7Ozs7Ozs7QUFKQTtBQUNBO0FBSUE7Ozs7Ozs7Ozs7O0FBbUJBO0FBQ0E7QUFDQTtBQUNBO0FBQUE7QUFBQTtBQUNBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFDQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBRkE7QUFFQTtBQUNBO0FBSEE7QUFRQTs7O0FBM0JBO0FBQ0E7QUFFQTtBQUNBO0FBRUE7QUFFQTtBQUNBO0FBQ0E7QUFDQTs7OztBQWRBIiwic291cmNlUm9vdCI6IiJ9");
 
 /***/ }),
-/* 127 */
-/* unknown exports provided */
-/* all exports used */
-/*!******************************!*\
-  !*** ./src/data/athletes.js ***!
-  \******************************/
-/***/ (function(module, exports) {
-
-eval("throw new Error(\"Module build failed: Error: ENOENT: no such file or directory, open '/Users/siddharthsharma/Documents/repos/react-contact-manager/src/data/athletes.js'\");//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMTI3LmpzIiwic291cmNlcyI6W10sIm1hcHBpbmdzIjoiIiwic291cmNlUm9vdCI6IiJ9");
-
-/***/ }),
+/* 127 */,
 /* 128 */
 /* unknown exports provided */
 /* all exports used */
@@ -3014,6 +2984,29 @@ eval("\n\nexports.__esModule = true;\n\nvar _typeof = typeof Symbol === \"functi
 
 "use strict";
 eval("\n\nvar _react = __webpack_require__(/*! react */ 4);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactDom = __webpack_require__(/*! react-dom */ 100);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ 17);\n\nvar _App = __webpack_require__(/*! ./components/App */ 99);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n/* global window document */\n\nvar AppClient = function AppClient() {\n  return _react2.default.createElement(\n    _reactRouterDom.BrowserRouter,\n    null,\n    _react2.default.createElement(_App.App, null)\n  );\n};\n\nwindow.onload = function () {\n  (0, _reactDom.render)(_react2.default.createElement(AppClient, null), document.getElementById('main'));\n};//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMjQ5LmpzIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vL3NyYy9hcHAtY2xpZW50LmpzP2M3YTEiXSwic291cmNlc0NvbnRlbnQiOlsiLyogZ2xvYmFsIHdpbmRvdyBkb2N1bWVudCAqL1xuXG5pbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xuaW1wb3J0IHsgcmVuZGVyIH0gZnJvbSAncmVhY3QtZG9tJztcbmltcG9ydCB7IEJyb3dzZXJSb3V0ZXIgYXMgUm91dGVyIH0gZnJvbSAncmVhY3Qtcm91dGVyLWRvbSc7XG5pbXBvcnQgeyBBcHAgfSBmcm9tICcuL2NvbXBvbmVudHMvQXBwJztcblxuY29uc3QgQXBwQ2xpZW50ID0gKCkgPT4gKFxuICA8Um91dGVyPlxuICAgIDxBcHAgLz5cbiAgPC9Sb3V0ZXI+XG4pO1xuXG53aW5kb3cub25sb2FkID0gKCkgPT4ge1xuICByZW5kZXIoPEFwcENsaWVudCAvPiwgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ21haW4nKSk7XG59O1xuXG5cblxuLy8gV0VCUEFDSyBGT09URVIgLy9cbi8vIHNyYy9hcHAtY2xpZW50LmpzIl0sIm1hcHBpbmdzIjoiOztBQUVBO0FBQ0E7OztBQUFBO0FBQ0E7QUFBQTtBQUNBO0FBQUE7QUFDQTs7O0FBTkE7QUFDQTtBQU1BO0FBQUE7QUFDQTtBQUFBO0FBQ0E7QUFEQTtBQURBO0FBQ0E7QUFLQTtBQUNBOyIsInNvdXJjZVJvb3QiOiIifQ==");
+
+/***/ }),
+/* 250 */,
+/* 251 */,
+/* 252 */,
+/* 253 */,
+/* 254 */,
+/* 255 */,
+/* 256 */,
+/* 257 */,
+/* 258 */,
+/* 259 */,
+/* 260 */,
+/* 261 */
+/* unknown exports provided */
+/* all exports used */
+/*!******************************!*\
+  !*** ./src/data/contacts.js ***!
+  \******************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nvar contacts = [{\n  name: 'sid'\n}];\n\nexports.default = contacts;//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMjYxLmpzIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vL3NyYy9kYXRhL2NvbnRhY3RzLmpzPzk5NDgiXSwic291cmNlc0NvbnRlbnQiOlsiY29uc3QgY29udGFjdHMgPSBbe1xuICBuYW1lOiAnc2lkJ1xufV07XG5cbmV4cG9ydCBkZWZhdWx0IGNvbnRhY3RzO1xuXG5cblxuLy8gV0VCUEFDSyBGT09URVIgLy9cbi8vIHNyYy9kYXRhL2NvbnRhY3RzLmpzIl0sIm1hcHBpbmdzIjoiOzs7OztBQUFBO0FBQ0E7QUFEQTtBQUNBO0FBR0EiLCJzb3VyY2VSb290IjoiIn0=");
 
 /***/ })
 /******/ ]);
