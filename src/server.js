@@ -26,7 +26,7 @@ app.use(Express.static(path.join(__dirname, 'static')));
 
 app.get('/player', (req, res) => {
 
-  return res.json({ test: 'this is the test string'});
+  return res.json({ test: {first:'this is the test string'} });
 });
 // universal routing and rendering
 // app.get('*', (req, res) => {
