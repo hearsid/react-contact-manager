@@ -1,5 +1,5 @@
 {
-  "name": "judo-heroes-2",
+  "name": "react-contact-manager",
   "version": "1.0.0",
   "description": "A React application to showcase rendering with Universal JavaScript",
   "main": "server.js",
@@ -12,7 +12,7 @@
     "build:dev": "webpack -d",
     "build:dev:watch": "webpack -d --watch"
   },
-  "author": "Luciano Mammino",
+  "author": "Siddharth Sharma",
   "license": "MIT",
   "dependencies": {
     "async-props": "^0.3.2",
