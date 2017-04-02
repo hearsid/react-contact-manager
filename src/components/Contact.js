@@ -1,14 +1,16 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
+import { Link } from 'react-router';
 
 export class Contact extends Component {
 
   render() {
-        var contact = this.props.contact;
+        var contact = this.props;
+
             return(
       <div>
         <div className="thumbnail">
             <img className="media-object contact-image"
-                  src="app/img/faces/{contact.id}.jpg" />
+                  src={`img/faces/${contact.id}.jpg`} />
         </div>
         <div className="media-heading">
             <h3>

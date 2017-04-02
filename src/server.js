@@ -5,7 +5,6 @@ import { Server } from 'http';
 import Express from 'express';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import { App } from './components/App';
 import Routes from './routes';
 
 import { match, RoutingContext } from 'react-router'
@@ -17,6 +16,8 @@ const server = new Server(app);
 
 import { routesConfig } from './routesConfig';
 import { Layout } from './components/Layout';
+import { ReactRouter, Router, BrowerHistory, hashHistory } from 'react-router';
+
 
 // use ejs templating engine
 app.engine('html', require('ejs').renderFile);
@@ -70,7 +71,8 @@ app.get('*', (req, res) => {
         const appHTML = renderToString(
           <Layout>
           <AsyncProps {...renderProps} {...asyncProps} />
-          </Layout>
+         </Layout>
+
         )
 
         // 3. render the script tag into the server markup

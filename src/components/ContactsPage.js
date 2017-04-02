@@ -19,6 +19,7 @@ export class ContactsPage extends Component {
 
   render() {
      var contacts = this.props.contacts;
+    
       return(
         <div className="contacts-page">
     <h2 className="page-header text-center">List of contacts</h2>
@@ -28,9 +29,12 @@ export class ContactsPage extends Component {
     </p>
     <ul className="media-list row contacts-container">
       { contacts.map( (contact, index) => {
-        <Contact key={index} {...contact}
-                className="my-repeat-animation contacts media col-md-6 col-lg-4"></Contact>
-      })
+        return(<Contact key={index} {...contact}
+                className="my-repeat-animation contacts media col-md-6 col-lg-4">
+                </Contact>
+              )
+
+    })
       }
     </ul>
   </div>

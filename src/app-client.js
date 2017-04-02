@@ -2,13 +2,17 @@
 
 import React from 'react';
 import { render } from 'react-dom';
-import { Router } from 'react-router';
-import { App } from './components/App';
+import { Routes } from './routes';
+import { routesConfig } from './routesConfig';
+import { ReactRouter, Router, browserHistory, hashHistory } from 'react-router';
+import { BrowserRouter } from 'react-router-dom';
+import { Layout } from './components/Layout';
 
-const AppClient = () => (
-  <Router>
-    <App />
+export const AppClient = () => (
+  <Layout>
+  <Router history={browserHistory} routes={routesConfig}>
   </Router>
+  </Layout>
 );
 
 window.onload = () => {

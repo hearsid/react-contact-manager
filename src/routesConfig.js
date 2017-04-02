@@ -1,11 +1,12 @@
 import {NotFoundPage} from './components/NotFoundPage'
 import {ContactsPage} from './components/ContactsPage'
 import {AddContactPage} from './components/AddContactPage';
+import {Layout} from './components/Layout';
 
 export const routesConfig = [
 
-  {path: '/', component: ContactsPage},
-  {path: '*', component: AddContactPage},
-  {path: '*', component: NotFoundPage},
+        {path: '/', component: ContactsPage},
+        {path: '/add', component: AddContactPage},
+        {path: '/404', component: NotFoundPage}
 
 ];
