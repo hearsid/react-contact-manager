@@ -27,7 +27,20 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(Express.static(path.join(__dirname, 'static')));
 console.log(contacts);
 app.get('/getContacts', (req, res) => {
-  return res.json(contacts);
+  var numberOfContacts = req.query.no_of_contacts;
+  res.setHeader('Content-Type', 'application/json');
+  var contacts_parsed = [];
+  // there are six contacts initially
+  for(let i =0 ; i< Math.floor(numberOfContacts/6) ; i++) {
+    contacts_parsed = contacts_parsed.concat(contacts);
+  }
+
+  // add more contacts based on remainder
+  for(let i=0; i< (numberOfContacts%6) ; i++ ) {
+     contacts_parsed.push(contacts[i]);
+  }
+
+  return res.json(contacts_parsed);
 
 });
 
@@ -63,6 +76,7 @@ app.get('/player', (req, res) => {
 app.get('*', (req, res) => {
   match({ routes: routesConfig, location: req.url }, (err, redirect, renderProps) => {
 
+      console.log(req.url);
       // 1. load the props
       loadPropsOnServer(renderProps, null, (err, asyncProps, scriptTag) => {
 
@@ -70,7 +84,7 @@ app.get('*', (req, res) => {
         //    `renderProps` and `asyncProps`
         const appHTML = renderToString(
           <Layout>
-          <AsyncProps {...renderProps} {...asyncProps} />
+            <AsyncProps {...renderProps} {...asyncProps} />
          </Layout>
 
         )

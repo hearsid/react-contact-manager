@@ -5,7 +5,7 @@ import {Layout} from './components/Layout';
 
 export const routesConfig = [
 
-        {path: '/', component: ContactsPage},
+        {path: '/contacts', component: ContactsPage},
         {path: '/add', component: AddContactPage},
         {path: '/404', component: NotFoundPage}
 

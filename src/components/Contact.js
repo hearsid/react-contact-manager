@@ -7,7 +7,7 @@ export class Contact extends Component {
         var contact = this.props;
 
             return(
-      <div>
+      <div className="contacts">
         <div className="thumbnail">
             <img className="media-object contact-image"
                   src={`img/faces/${contact.id}.jpg`} />
@@ -28,9 +28,9 @@ export class Contact extends Component {
         <div className="media-body">
             <dl>
                 <dt>[Phone Number]</dt>
-                <dd ng-bind="contact.tel"></dd>
+                <dd>{contact.tel}</dd>
                 <dt>[Email]</dt>
-                <dd ng-bind="contact.email"></dd>
+                <dd>{contact.email}</dd>
             </dl>
         </div>
         <hr/>

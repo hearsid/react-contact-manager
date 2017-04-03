@@ -10,8 +10,8 @@ import { Layout } from './components/Layout';
 
 export const AppClient = () => (
   <Layout>
-  <Router history={browserHistory} routes={routesConfig}>
-  </Router>
+    <Router history={browserHistory} routes={routesConfig}>
+    </Router>
   </Layout>
 );
 

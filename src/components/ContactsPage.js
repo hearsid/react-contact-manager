@@ -2,11 +2,17 @@ import React, {Component} from 'react';
 import { Contact } from './Contact';
 import { Link } from 'react-router';
 import  axios from 'axios';
+import { Utilities } from './utils';
 
 export class ContactsPage extends Component {
 
-  static loadProps(context, cb) {
-        axios.get('http://localhost:3000/getContacts')
+
+  static loadProps(context,  cb) {
+        console.log(context);
+        // let utils = new Utilities();
+        let no_of_contacts = context.location.query.no_of_contacts;
+
+        axios.get('http://localhost:3000/getContacts?no_of_contacts='+no_of_contacts)
        .then(function (response) {
         cb(null, {contacts: response.data});
 
@@ -19,7 +25,7 @@ export class ContactsPage extends Component {
 
   render() {
      var contacts = this.props.contacts;
-    
+
       return(
         <div className="contacts-page">
     <h2 className="page-header text-center">List of contacts</h2>
