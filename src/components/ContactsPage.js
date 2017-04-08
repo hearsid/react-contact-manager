@@ -10,7 +10,7 @@ export class ContactsPage extends Component {
   static loadProps(context,  cb) {
         console.log(context);
         // let utils = new Utilities();
-        let no_of_contacts = context.location.query.no_of_contacts;
+        let no_of_contacts = context.location.query.no_of_contacts || 10;
 
         axios.get('http://localhost:3000/getContacts?no_of_contacts='+no_of_contacts)
        .then(function (response) {
@@ -33,7 +33,7 @@ export class ContactsPage extends Component {
         <Link to='/add' activeclassName="active"
               className="btn btn-lg btn-outline" >Add Contact</Link>
     </p>
-    <ul className="media-list row contacts-container">
+    <ul className="media-list contacts-container">
       { contacts.map( (contact, index) => {
         return(<Contact key={index} {...contact}
                 className="my-repeat-animation contacts media col-md-6 col-lg-4">

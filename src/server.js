@@ -27,7 +27,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(Express.static(path.join(__dirname, 'static')));
 console.log(contacts);
 app.get('/getContacts', (req, res) => {
-  var numberOfContacts = req.query.no_of_contacts;
+  var numberOfContacts = req.query.no_of_contacts || 10; // default 10 contacts
   res.setHeader('Content-Type', 'application/json');
   var contacts_parsed = [];
   // there are six contacts initially
