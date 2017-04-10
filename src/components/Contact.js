@@ -3,6 +3,13 @@ import { Link } from 'react-router';
 
 export class Contact extends Component {
 
+  constructor(props) {
+    super(props);
+  }
+  
+ deleteContact() {
+alert('this');
+ }
   render() {
         var contact = this.props;
 
@@ -16,12 +23,12 @@ export class Contact extends Component {
             <h3>
                 {contact.name}
                 <small>
-                    <Link to="/add/{contact.id}">
+                    <Link to={`/add/${contact.id}`}>
                       <span className="glyphicon glyphicon-pencil"></span>
                     </Link>
-                    <a ng-click="deleteContact($index)" className="delete-contract">
+                    <span onClick={this.deleteContact.bind(this)} className="delete-contract">
                         <span className="glyphicon glyphicon-trash"></span>
-                    </a>
+                    </span>
                 </small>
             </h3>
         </div>

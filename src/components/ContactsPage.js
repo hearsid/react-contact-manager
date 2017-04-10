@@ -6,6 +6,9 @@ import { Utilities } from './utils';
 
 export class ContactsPage extends Component {
 
+  constructor(props) {
+    super(props);
+  }
 
   static loadProps(context,  cb) {
         console.log(context);
@@ -23,9 +26,21 @@ export class ContactsPage extends Component {
       });
   }
 
-  render() {
-     var contacts = this.props.contacts;
+  delete(event) {
+    alert(event);
+  }
 
+  edit() {
+
+  }
+
+  add() {
+
+  }
+
+  render() {
+     var contacts = this.props.contacts ;
+      console.log('comp', contacts);
       return(
         <div className="contacts-page">
     <h2 className="page-header text-center">List of contacts</h2>
@@ -36,12 +51,16 @@ export class ContactsPage extends Component {
     <ul className="media-list contacts-container">
       { contacts.map( (contact, index) => {
         return(<Contact key={index} {...contact}
+                onDelete={this.delete}
+                onEdit={this.edit}
+                onAdd={this.add}
                 className="my-repeat-animation contacts media col-md-6 col-lg-4">
                 </Contact>
               )
 
+
     })
-      }
+    }
     </ul>
   </div>
     )

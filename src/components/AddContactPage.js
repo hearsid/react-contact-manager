@@ -1,7 +1,17 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-export class AddContactPage extends React.Component {
+export class AddContactPage extends Component {
 
+  constructor(props) {
+    super(props);
+  }
+  
+  componentDidMount() {
+    let id = this.props.match.params.id;
+    if(id) {
+
+    }
+  }
   render() {
       let title="Add";
             return(
@@ -11,7 +21,8 @@ export class AddContactPage extends React.Component {
             <div className="form-group">
                 <label className="col-sm-4 control-label">Full name:</label>
                 <div className="col-sm-6">
-                    <input type="text" className="form-control contact-name-input" ng-model="name" />
+                    <input type="text" className="form-control contact-name-input"
+                      value="some" />
                 </div>
             </div>
             <div className="form-group">

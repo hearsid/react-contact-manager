@@ -78,7 +78,7 @@ app.get('*', (req, res) => {
 
       console.log(req.url);
       // 1. load the props
-      loadPropsOnServer(renderProps, null, (err, asyncProps, scriptTag) => {
+      loadPropsOnServer(renderProps, {}, (err, asyncProps, scriptTag) => {
 
         // 2. use `AsyncProps` instead of `RoutingContext` and pass it
         //    `renderProps` and `asyncProps`
