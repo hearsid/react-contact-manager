@@ -1,30 +1,28 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 import { Contact } from './Contact';
 import { Link } from 'react-router';
-import  axios from 'axios';
+import fetch from 'isomorphic-fetch';
 import { Utilities } from './utils';
 
-export class ContactsPage extends Component {
+ class ContactsPage extends Component {
 
   constructor(props) {
-    super(props);
+    super(...arguments);
+    this.state = {
+      contacts: this.props.initialData || [],
+      filterText: ''
+    }
   }
 
-  static loadProps(context,  cb) {
-        console.log(context);
-        // let utils = new Utilities();
-        let no_of_contacts = context.location.query.no_of_contacts || 10;
-
-        axios.get('http://localhost:3000/getContacts?no_of_contacts='+no_of_contacts)
-       .then(function (response) {
-        cb(null, {contacts: response.data});
-
+  componentDidMount() {
+    if(!this.props.initialData) {
+      ContactsPage.requestInitialData().then( contacts => {
+        this.setState({ contacts });
       })
-      .catch(function (error) {
-        console.log(error);
-        cb(null, {name: "error"});
-      });
+    }
   }
+
+
 
   delete(event) {
     alert(event);
@@ -66,3 +64,15 @@ export class ContactsPage extends Component {
     )
 }
 }
+
+ContactsPage.PropTypes = {
+  initialData: PropTypes.any
+}
+
+ContactsPage.requestInitialData = () => {
+  return fetch('http://localhost:3000/getContacts')
+          .then((response) => response.json());
+}
+
+
+export { ContactsPage };

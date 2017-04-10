@@ -2,7 +2,7 @@ import path from 'path';
 
 const config = {
   entry: {
-    js: './src/app-client.js',
+    js: './src/browser.js',
   },
   output: {
     path: path.join(__dirname, 'src', 'static', 'js'),

@@ -1,20 +1,13 @@
 import React from 'react';
-import { AsyncProps } from 'async-props';
-import { ReactRouter, Router, browserHistory, hashHistory } from 'react-router';
-import { routesConfig } from './routesConfig';
+import { Route, IndexRoute  } from 'react-router';
 import { Layout } from './components/Layout';
 import { BrowserRouter } from 'react-router-dom'
+import { ContactsPage } from './components/ContactsPage';
+import { AddContactPage } from './components/AddContactPage';
 
-
-export default class Routes extends React.Component {
-
-  render() {
-    return (
-      <Layout>
-      <Router history={browserHistory}
-                   routes={routesConfig}
-                  render={ (props) => { <AsyncProps {...props} /> } } />
-                </Layout>
-            )
-  }
-}
+export default (
+            <Route path="/" component="Layout">
+              <IndexRoute component="ContactsPage" />
+              <Route path="/add" component="AddContactPage" />
+            </Route>
+          );
