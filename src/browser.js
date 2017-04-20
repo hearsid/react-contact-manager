@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Router } from 'react-router';
+import { Router, hashHistory } from 'react-router';
 import { createHistory } from 'history';
 import routes from './routes';
 let handleCreateElement = (Component, props) => {
@@ -15,5 +15,5 @@ return <Component {...props} />;
 }
 }
 render((
-<Router history={createHistory()} createElement={handleCreateElement}>{routes}</Router>
+<Router history={hashHistory} createElement={handleCreateElement}>{routes}</Router>
 ), document.getElementById('root'))

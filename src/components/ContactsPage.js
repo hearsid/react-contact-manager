@@ -18,6 +18,8 @@ import { Utilities } from './utils';
     if(!this.props.initialData) {
       ContactsPage.requestInitialData().then( contacts => {
         this.setState({ contacts });
+      }).catch( err => {
+        console.log(err);
       })
     }
   }
@@ -71,7 +73,9 @@ ContactsPage.PropTypes = {
 
 ContactsPage.requestInitialData = () => {
   return fetch('http://localhost:3000/getContacts')
-          .then((response) => response.json());
+          .then((response) => response.json()).catch( err => {
+            console.log(err);
+          });
 }
 
 
