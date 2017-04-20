@@ -3,6 +3,7 @@ import { Contact } from './Contact';
 import { Link } from 'react-router';
 import fetch from 'isomorphic-fetch';
 import { Utilities } from './utils';
+import axios from 'axios';
 
  class ContactsPage extends Component {
 
@@ -18,9 +19,9 @@ import { Utilities } from './utils';
     if(!this.props.initialData) {
       ContactsPage.requestInitialData().then( contacts => {
         this.setState({ contacts });
-      }).catch( err => {
-        console.log(err);
-      })
+      }, err => {
+
+      });
     }
   }
 
@@ -75,10 +76,8 @@ ContactsPage.PropTypes = {
 }
 
 ContactsPage.requestInitialData = () => {
-  return fetch('http://localhost:3000/getContacts')
-          .then((response) => response.json()).catch( err => {
-            console.log(err);
-          });
+  return axios.get('http://localhost:3000/getContacts');
+
 }
 
 

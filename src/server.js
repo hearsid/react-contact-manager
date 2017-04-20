@@ -59,15 +59,16 @@ let renderRoute = (response, renderProps) =>
 {
   let routeProps = getPropsFromRoute(renderProps, ['requestInitialData']);
   if (routeProps.requestInitialData) {
-    routeProps.requestInitialData().then((data) => {
+    routeProps.requestInitialData().then((res) => {
+      let data = res.data;
       let handleCreateElement = (Component, props) => (
-      < Component initialData = {data} {...props} />
+      <Component initialData={data} {...props} />
     );
       response.render('index', {
         reactInitialData: JSON.stringify(data),
-        content: renderToString(< RouterContext createElement = {handleCreateElement} {...renderProps} />)
+        content: renderToString(<RouterContext createElement={handleCreateElement} {...renderProps} />)
     });
-    });
+  }, err => {});
   } else {
     response.render('index', {
       reactInitialData: null,
