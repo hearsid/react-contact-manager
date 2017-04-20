@@ -40,7 +40,8 @@ import { Utilities } from './utils';
 
   render() {
      var contacts = this.props.contacts ;
-      console.log('comp', contacts);
+        console.log('comp', contacts);
+
       return(
         <div className="contacts-page">
     <h2 className="page-header text-center">List of contacts</h2>
@@ -49,7 +50,8 @@ import { Utilities } from './utils';
               className="btn btn-lg btn-outline" >Add Contact</Link>
     </p>
     <ul className="media-list contacts-container">
-      { contacts.map( (contact, index) => {
+      {
+        contacts.map( (contact, index) => {
         return(<Contact key={index} {...contact}
                 onDelete={this.delete}
                 onEdit={this.edit}
@@ -60,10 +62,11 @@ import { Utilities } from './utils';
 
 
     })
-    }
+  }
     </ul>
   </div>
     )
+
 }
 }
 

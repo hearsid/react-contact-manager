@@ -6,7 +6,7 @@ import { ContactsPage } from './components/ContactsPage';
 import { AddContactPage } from './components/AddContactPage';
 
 export default (
-            <Route path="/contacts" component={Layout}>
+            <Route path="/contacts/" component={Layout}>
               <IndexRoute component={ContactsPage} />
               <Route path="add" component={AddContactPage} />
             </Route>
