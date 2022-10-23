@@ -1,18 +1,12 @@
 import React, {Component} from 'react';
 
-export class AddContactPage extends Component {
+export function AddContactPage(props) {
 
-  constructor(props) {
-    super(props);
-  }
-  
-  componentDidMount() {
-    let id = this.props.match.params.id;
+    let id = props.match.params.id;
     if(id) {
 
     }
-  }
-  render() {
+
       let title="Add";
             return(
         <div className="add-contact-page">
@@ -43,11 +37,10 @@ export class AddContactPage extends Component {
                     <button ng-show="title=='Edit'" type="submit" ng-click="editContact(id , name , email , tel)" className="btn btn-outline btn-lg btn-block">Submit</button>
                 </div>
                 <div className="col-sm-3">
-                    <a ui-sref="home" className="btn btn-outline btn-lg btn-block">Cancel</a>
+                    <a className="btn btn-outline btn-lg btn-block">Cancel</a>
                 </div>
             </div>
         </form>
       </div>
         )
-   }
 }

@@ -1,16 +1,13 @@
-import React from 'react';
-import { Route, IndexRoute, Routes  } from 'react-router-dom';
-import { Layout } from './components/Layout';
-import { BrowserRouter } from 'react-router-dom'
-import { ContactsPage } from './components/ContactsPage';
+import { Route, Routes } from 'react-router-dom';
 import { AddContactPage } from './components/AddContactPage';
+import { ContactsPage } from './components/ContactsPage';
 
 export default function routes() {
-      return (<Routes>
-            <Route path="/contacts" index element={<Layout />}>
-              {/* <IndexRoute component={ContactsPage} /> */}
-              {/* <Route path="add" component={AddContactPage} /> */}
-            </Route>
-          </Routes>
-          );
+  return (
+    <Routes>
+      <Route path="/" element={<ContactsPage />} />
+      <Route path="/contacts" index element={<ContactsPage />} />
+      <Route path="add" component={AddContactPage} />
+    </Routes>
+  );
 };

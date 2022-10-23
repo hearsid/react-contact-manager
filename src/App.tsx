@@ -1,14 +1,16 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 import Routes from './routes';
-import { Link } from 'react-router-dom';
+import { Header } from './components/Header';
 
 function App() {
   return (
     <div className="App">
+      <div className="layout">
+        <Header></Header>
       <Routes></Routes>
-      <Link to="/contacts">Contact</Link>
+      </div>
     </div>
   );
 }
