@@ -14,13 +14,7 @@ export function Header(props)  {
             <p>Simple React example application</p>
           </div>
         </header>
-        <div className="container">
-          <div className="row">
-            <div className="col-xs-12 main-container">
-                {props.children}
-            </div>
-          </div>
-        </div>
+        
       </div>
         )
 }
