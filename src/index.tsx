@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.scss';
+import { HashRouter } from "react-router-dom";
 import App from './App';
-import { BrowserRouter } from "react-router-dom";
+import './index.scss';
 import reportWebVitals from './reportWebVitals';
-
 // import { StoreProvider } from './store/Store';
 
 const root = ReactDOM.createRoot(
@@ -13,9 +12,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     {/* <StoreProvider> */}
-    <BrowserRouter>
+    <HashRouter>
       <App />
-    </BrowserRouter>
+    </HashRouter>
     {/* </StoreProvider> */}
   </React.StrictMode>
 );
