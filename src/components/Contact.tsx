@@ -16,7 +16,7 @@ export function Contact(props) {
       <div className="media-body">
         <div className="media-heading">
           <h3>
-            {index + 1+') '}
+            {index + 1 + ') '}
             {contact.name}
             <a onClick={() => {
               props.onDelete(index)
@@ -26,10 +26,14 @@ export function Contact(props) {
           </h3>
         </div>
         <div className="info-container">
-          <div className="label">Phone Number:</div>
-          <div className="value">{contact.tel}</div>
-          <div className="label">Email:</div>
-          <div className="value">{contact.email}</div>
+          <div className="row">
+            <div className="label">Phone Number:</div>
+            <div className="value">{contact.tel}</div>
+          </div>
+          <div className="row">
+            <div className="label">Email:</div>
+            <div className="value">{contact.email}</div>
+          </div>
         </div>
       </div>
     </div>

@@ -42,8 +42,6 @@ export default function ContactsPage(props) {
               >
             </Contact>
             )
-
-
           })
         }
       </div>

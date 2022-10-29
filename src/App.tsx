@@ -9,13 +9,9 @@ function App() {
     <div className="App">
       <div className="layout">
         <Header></Header>
-        <div className="container">
-          <div className="row">
-            <div className="col-xs-12 main-container">
+            <div className="main-container container">
               <Routes></Routes>
             </div>
-          </div>
-        </div>
       </div>
     </div>
   );

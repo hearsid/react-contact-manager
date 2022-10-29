@@ -11,7 +11,6 @@ export function AddContactPage(props) {
             return(
         <div className="add-contact-page">
         <h2 className="page-header text-center">{title} Contact</h2>
-        <form role="form" className="form-horizontal contract-form">
             <div className="form-group">
                 <label className="col-sm-4 control-label">Full name:</label>
                 <div className="col-sm-6">
@@ -40,7 +39,6 @@ export function AddContactPage(props) {
                     <a className="btn btn-outline btn-lg btn-block">Cancel</a>
                 </div>
             </div>
-        </form>
       </div>
         )
 }
